@@ -7,28 +7,26 @@ def encoder(pw):
 
 def main():
     choice = ""
-    while choice != "q":
-        print("1: Encode password")
-        print("2: Decode password")
-        print("q: Quit")
-        choice = input("Select an option: ")
+    while choice != "3":
+        print("1. Encode")
+        print("2. Decode")
+        print("3. Quit")
+        choice = input("Please enter an option: ")
 
+        password_data = ""
         if choice == "1":
-            password = input("Enter a password to encode: ")
+            password = input("Please enter your password to encode: ")
             try: 
-                print(encoder(password))
+                password_data = encoder(password)
             except:
                 print("Invalid password, must be numbers only")
+            finally:
+                print("Your password has been encoded and stored!")
         elif choice == "2":
-            password = input("Enter a password to decode: ")
             try:
-                print(decoder(password)) # needs decoder function to be implemented
+                print(f"The encoded password is {password_data}, and the original password is {password}") # needs decoder function to be implemented
             except:
                 print("Invalid input, must be numbers only")
-        elif choice == "q":
-            break
-        else:
-            print("Invalid input")
 
 if __name__ == "__main__":
     main()
