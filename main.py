@@ -1,3 +1,5 @@
+# Daphne Calin
+
 def encoder(pw):
     encoded_pw = ""
     for digit in pw:
