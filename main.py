@@ -17,11 +17,12 @@ def decoder(password):
         pw_return += str(value)
     return pw_return
 
-
+# Daphne Calin
 def main():
     choice = ""
     password_data = ""
     while choice != "3":
+        print("Menu\n--------------")
         print("1. Encode")
         print("2. Decode")
         print("3. Quit")
