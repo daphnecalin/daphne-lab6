@@ -7,6 +7,17 @@ def encoder(pw):
     return encoded_pw
 
 
+# Paola Bechalani
+
+def decoder(password):
+    pw_return = ""
+    value = 0
+    for i in range(len(password)):
+        value = int(password[i]) - 3
+        pw_return += str(value)
+    return pw_return
+
+
 def main():
     choice = ""
     password_data = ""
@@ -18,18 +29,19 @@ def main():
 
         if choice == "1":
             password = input("Please enter your password to encode: ")
-            try: 
+            try:
                 password_data = encoder(password)
             except:
                 print("Invalid password")
             finally:
                 print("Your password has been encoded and stored!")
-                print(password_data)
         elif choice == "2":
             try:
-                print(f"The encoded password is {password_data}, and the original password is {decoder(password_data)}") # needs decoder function to be implemented
+                print(
+                    f"The encoded password is {password_data}, and the original password is {decoder(password_data)}.")  # needs decoder function to be implemented
             except:
                 print("Invalid input, must be numbers only")
+
 
 if __name__ == "__main__":
     main()
